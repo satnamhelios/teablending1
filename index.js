@@ -4,9 +4,7 @@ const app = require("./app");
 const cors = require('cors');
 
 
-app.use(cors({
-  origin: '*'
-}));
+app.use(cors());
 
 
 app.get("/", (req, res) => {
