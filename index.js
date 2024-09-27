@@ -2,10 +2,16 @@ const express = require("express");
 const app = require("./app");
 // const main = require("./main");
 const cors = require('cors');
-const allowedCors = ["https://teablending.magicloans.in/","http://localhost:3000/","http://localhost:3001/"]
 
-app.use(cors({origin: '*'}));
+// app.use(cors({
+//   origin: '*'
+// }));
 
+app.use(cors({
+  origin: 'https://teablending.magicloans.in', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
+  credentials: true // If your frontend is using credentials (cookies, authorization headers)
+}));
 
 app.get("/", (req, res) => {
   res.send("Hello World");
