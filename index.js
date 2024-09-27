@@ -2,9 +2,9 @@ const express = require("express");
 const app = require("./app");
 // const main = require("./main");
 const cors = require('cors');
+const allowedCors = ["https://teablending.magicloans.in/","http://localhost:3000/","http://localhost:3001/"]
 
-
-app.use(cors());
+app.use(cors({origin: allowedCors}));
 
 
 app.get("/", (req, res) => {
